@@ -12,22 +12,29 @@ function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = () => {
-    const userData = { name, email, password };
+   // Ensure this is set correctly
 
-    axios
-  .post(userApi+'save', userData)
-  .then(() => {
-    navigate('/login');
-  })
+const handleSubmit = () => {
+  const userData = { name, email, password };
 
-      .catch(() => {
-        setOutput('Registration failed');
-        setName('');
-        setEmail('');
-        setPassword('');
-      });
-  };
+  axios
+    .post(userApi + 'save', userData, {
+      headers: {
+        'Content-Type': 'application/json' // <-- Very important
+      }
+    })
+    .then(() => {
+      navigate('/login');
+    })
+    .catch((error) => {
+      console.error('Registration Error:', error); // Helpful for debugging
+      setOutput('Registration failed');
+      setName('');
+      setEmail('');
+      setPassword('');
+    });
+};
+
 
   return (
     <div className="register-page">
