@@ -2,6 +2,8 @@ import './Register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { userApi } from '../apiurl'; // Adjust path as needed
+
 
 function Register() {
   const navigate = useNavigate();
@@ -14,10 +16,11 @@ function Register() {
     const userData = { name, email, password };
 
     axios
-      .post('/api/user/save', userData)
-      .then(() => {
-        navigate('/login');
-      })
+  .post(`${userApi}save`, userData)
+  .then(() => {
+    navigate('/login');
+  })
+
       .catch(() => {
         setOutput('Registration failed');
         setName('');
