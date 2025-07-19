@@ -2,7 +2,7 @@ import './Register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { userApi } from '../apiurl'; // Adjust path as needed
+import { userApi } from '../../apiurl'; // Adjust path as needed
 
 
 function Register() {
