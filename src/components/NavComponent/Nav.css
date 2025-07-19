@@ -1,7 +1,5 @@
+/* Base Navbar Styles */
 .tp-navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: white;
   padding: 12px 40px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
@@ -18,9 +16,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
 }
 
+/* Branding */
 .tp-navbar-brand {
   display: flex;
   align-items: center;
@@ -38,8 +38,9 @@
 .tp-navbar-brand span {
   display: flex;
   flex-direction: column;
-  font-size: 18px;
+  justify-content: center;
   line-height: 1.2;
+  font-size: 18px;
 }
 
 .tp-navbar-brand small {
@@ -48,6 +49,34 @@
   font-weight: 600;
 }
 
+/* Menu Toggle */
+.tp-menu-toggle {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Prevent focus blue background on click */
+.tp-menu-toggle:focus {
+  outline: none;
+  background: transparent;
+}
+
+/* Nav Collapse Container */
+.tp-collapse.tp-navbar-collapse {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+  padding: 0;
+  margin: 0;
+}
+
+/* Nav Items */
 .tp-navbar-nav {
   list-style: none;
   display: flex;
@@ -86,16 +115,71 @@
 
 .tp-btn:hover {
   background-color: #0056b3;
-  color: white;
   text-decoration: none;
+  color: white;
 }
 
-.tp-border-btn {
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .tp-menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .tp-collapse.tp-navbar-collapse {
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    transition: max-height 0.3s ease;
+  }
+
+  .tp-collapse.tp-navbar-collapse.active {
+    max-height: 500px;
+    padding-top: 10px;
+  }
+
+  .tp-navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .tp-nav-item,
+  .tp-nav-link,
+  .tp-btn {
+    width: 100%;
+    text-align: left;
+    padding: 12px 0;
+  }
+}
+/* Menu Icon Positioning */
+.tp-menu-toggle {
+  display: none; /* hidden by default, shown in mobile */
+  font-size: 26px;
+  background: transparent;
   border: none;
-  background-color: #007bff;
+  color: #333;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 4px;
 }
 
-a.tp-nav-link.tp-btn > a {
-  color: white;
-  text-decoration: none;
+/* Prevent blue background */
+.tp-menu-toggle:focus,
+.tp-menu-toggle:active,
+.tp-menu-toggle:hover {
+  background: none !important;
+  outline: none !important;
+  color: #333 !important;
+  box-shadow: none !important;
+}
+
+/* Show the menu button only on small screens */
+@media (max-width: 768px) {
+  .tp-menu-toggle {
+    display: block;
+  }
 }
