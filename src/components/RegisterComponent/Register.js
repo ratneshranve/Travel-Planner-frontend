@@ -16,7 +16,7 @@ function Register() {
     const userData = { name, email, password };
 
     axios
-  .post(`${userApi}save`, userData)
+  .post(userApi+'save', userData)
   .then(() => {
     navigate('/login');
   })
