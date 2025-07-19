@@ -1,2 +1,2 @@
-export const userApi ="api/user/";
-export const itineraryApi = "api/itinerary/";
+export const userApi = "https://travel-planner-backend-ears.onrender.com/user/";
+export const itineraryApi = "https://travel-planner-backend-ears.onrender.com/itinerary/";
