@@ -1,0 +1,91 @@
+.manage-users-container {
+  padding: 30px;
+  max-width: 90%;
+  margin: 40px auto;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.manage-users-container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  color: #111;
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+  text-align: left;
+}
+
+.users-table th {
+  background: rgba(0, 180, 216, 0.2);
+  color: #0077b6;
+  padding: 12px 16px;
+  border-radius: px;
+  font-size: 1rem;
+}
+
+.users-table td {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 12px 16px;
+  border-radius: px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.users-table td:last-child {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  color: white;
+  font-size: 0.9rem;
+}
+
+.btn.verify {
+  background-color: #00b894;
+}
+
+.btn.verify:hover {
+  background-color: #019875;
+}
+
+.btn.block {
+  background-color: #0984e3;
+}
+
+.btn.block:hover {
+  background-color: #076dc2;
+}
+
+.btn.delete {
+  background-color: #d63031;
+}
+
+.btn.delete:hover {
+  background-color: #b71c1c;
+}

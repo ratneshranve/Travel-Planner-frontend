@@ -1,0 +1,71 @@
+.register-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #9be4e3, #9abbe4);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-card {
+  background-color: #fff;
+  padding: 48px 36px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+}
+
+.mb-3 {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: #2196f3;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.btn-primary {
+  background-color: #2196f3;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.btn-primary:hover {
+  background-color: #1976d2;
+}
+.link-button {
+  color: #0d47a1;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.link-button:hover {
+  color: #08306b;
+}

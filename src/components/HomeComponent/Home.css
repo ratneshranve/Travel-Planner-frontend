@@ -1,0 +1,73 @@
+/* Hero Section */
+.tp-hero-section {
+  background-image: url('./assets/images/hero.jpg'); /* Use a high-res travel-themed image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tp-hero-overlay {
+  background: rgba(0, 0, 0, 0.55);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.tp-hero-content {
+  color: #fff;
+  max-width: 800px;
+}
+
+.tp-hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.tp-hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: #eaeaea;
+}
+
+.tp-btn-primary {
+  padding: 12px 28px;
+  background-color: #007bff;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.tp-btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* Message Section */
+.tp-message-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+}
+
+.tp-message-heading {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.tp-message-text {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
