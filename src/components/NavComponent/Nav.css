@@ -1,19 +1,19 @@
 /* Base styles */
 .navbar {
   
-  color: white;
+  color: #00bcff;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
-   background: #020024;
-background: linear-gradient(90deg, #555 0%, #00b894 35%, rgb(0 72 86) 100%);
+   background: #ffffff;
+
 }
 
 
 .nav-logo a {
-  color: #ffffff;
+  color: #00bcff;
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: bold;
@@ -31,7 +31,7 @@ background: linear-gradient(90deg, #555 0%, #00b894 35%, rgb(0 72 86) 100%);
 }
 
 .nav-items li a {
-  color: white;
+  color: #00bcff;
   text-decoration: none;
 }
 
