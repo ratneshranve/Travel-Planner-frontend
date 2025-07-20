@@ -14,7 +14,7 @@
   text-align: center;
   margin-bottom: 30px;
   font-size: 2rem;
-  color: #111;
+  color: #ffffff;
 }
 
 .error-message {
@@ -88,4 +88,61 @@
 
 .btn.delete:hover {
   background-color: #b71c1c;
+}
+@media (max-width: 768px) {
+  .manage-users-container {
+    padding: 20px 10px;
+    margin: 20px 10px;
+    width: 95%;
+    border-radius: 12px;
+  }
+
+  .manage-users-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .users-table {
+    display: block;
+    overflow-x: auto;
+    width: 100%;
+  }
+
+  .users-table thead {
+    display: none;
+  }
+
+  .users-table tr {
+    display: block;
+    margin-bottom: 15px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .users-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .users-table td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    color: #0077b6;
+  }
+
+  .users-table td:last-child {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+    width: 100%;
+    box-sizing: border-box;
+  }
 }

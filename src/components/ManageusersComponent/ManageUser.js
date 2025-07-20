@@ -62,30 +62,41 @@ function ManageUser() {
           </tr>
         </thead>
         <tbody>
-          {users.length > 0 ? (
-            users.map((user, index) => (
-              <tr key={user._id}>
-                <td>{index + 1}</td>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.info ? new Date(user.info).toLocaleDateString() : '-'}</td>
-                <td>{user.status === 0 ? 'Blocked' : 'Verified'}</td>
-                <td>
-                  {user.status === 0 ? (
-                    <button className="btn verify" onClick={() => changeStatus(user._id, 'verify')}>Verify</button>
-                  ) : (
-                    <button className="btn block" onClick={() => changeStatus(user._id, 'block')}>Block</button>
-                  )}
-                  <button className="btn delete" onClick={() => changeStatus(user._id, 'delete')}>Delete</button>
-                </td>
-              </tr>
-            ))
+  {users.length > 0 ? (
+    users.map((user, index) => (
+      <tr key={user._id}>
+        <td data-label="S.No">{index + 1}</td>
+        <td data-label="Name">{user.name}</td>
+        <td data-label="Email">{user.email}</td>
+        <td data-label="Registered">
+          {user.info ? new Date(user.info).toLocaleDateString() : '-'}
+        </td>
+        <td data-label="Status">
+          {user.status === 0 ? 'Blocked' : 'Verified'}
+        </td>
+        <td data-label="Actions">
+          {user.status === 0 ? (
+            <button className="btn verify" onClick={() => changeStatus(user._id, 'verify')}>
+              Verify
+            </button>
           ) : (
-            <tr>
-              <td colSpan="6">No users found.</td>
-            </tr>
+            <button className="btn block" onClick={() => changeStatus(user._id, 'block')}>
+              Block
+            </button>
           )}
-        </tbody>
+          <button className="btn delete" onClick={() => changeStatus(user._id, 'delete')}>
+            Delete
+          </button>
+        </td>
+      </tr>
+    ))
+  ) : (
+    <tr>
+      <td data-label="Notice" colSpan="6">No users found.</td>
+    </tr>
+  )}
+</tbody>
+
       </table>
     </div>
   );
