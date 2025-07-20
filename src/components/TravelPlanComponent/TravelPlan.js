@@ -21,11 +21,12 @@ function TravelPlan() {
 You are a professional travel planner.
 
 Generate a ${data.days}-day itinerary for a ${data.tripType} trip from ${data.from} to ${data.to}, starting on ${data.startDate}, for ${data.people} people, with a ₹${data.budget} total budget.
-
+Traveler interests include: ${data.interests}.
 Include:
 1. **Trip Summary**: Dates, group type, total budget.
 2. **Travel Options**: Recommend best mode (flight/train/bus) with real provider names, departure/arrival times, and cost.
 3. **Hotel Suggestion**: Hotel/guesthouse name, location, nightly cost.
+dont give links
 4. **Daily Plan**: 
    - Food: Places for breakfast, lunch, dinner
    - Activities (3–5 per day with times)
