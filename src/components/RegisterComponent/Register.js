@@ -15,25 +15,31 @@ function Register() {
    // Ensure this is set correctly
 
 const handleSubmit = () => {
+  if (password.length < 5 || password.length > 10) {
+    setOutput('Password must be between 5 and 10 characters');
+    return;
+  }
+
   const userData = { name, email, password };
 
   axios
     .post(userApi + 'save', userData, {
       headers: {
-        'Content-Type': 'application/json' // <-- Very important
+        'Content-Type': 'application/json'
       }
     })
     .then(() => {
       navigate('/login');
     })
     .catch((error) => {
-      console.error('Registration Error:', error); // Helpful for debugging
+      console.error('Registration Error:', error);
       setOutput('Registration failed');
       setName('');
       setEmail('');
       setPassword('');
     });
 };
+
 
 
   return (
