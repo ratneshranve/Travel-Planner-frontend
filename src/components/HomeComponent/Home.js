@@ -8,7 +8,7 @@ function Home() {
           <div className="tp-hero-content text-center">
             <h1 className="tp-hero-title">Discover. Plan. Explore.</h1>
             <p className="tp-hero-subtitle">
-              Your next adventure starts here. Plan unforgettable trips with ease and confidence.
+              Your next adventure starts here. Our AI-powered assistant creates personalized travel plans just for you — fast, easy, and unforgettable.
             </p>
             <a> <Link  className="tp-btn-primary" to="/register">Start Exploring</Link></a>
           </div>
