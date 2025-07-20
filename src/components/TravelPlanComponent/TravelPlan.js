@@ -4,6 +4,7 @@ import DOMPurify from "dompurify";
 import { marked } from "marked";
 import html2pdf from "html2pdf.js";
 import "./TravelPlan.css";
+import { itineraryApi } from "../../apiurl";
 
 function TravelPlan() {
   const location = useLocation();
@@ -38,7 +39,7 @@ Only use real places, restaurants, and transport providers. Be concise, practica
     const fetchPlan = async () => {
       setLoading(true);
       try {
-        const res = await fetch("http://localhost:3001/gemini/generate-plan", {
+        const res = await fetch(itineraryApi+"generate-plan", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ prompt }),
