@@ -91,7 +91,9 @@ Only use real places, restaurants, and transport providers. Be concise, practica
         </h2>
 
         {loading ? (
-          <p className="travel-loading">Generating itinerary...</p>
+          
+          <p className="travel-loading">Generating itinerary...
+          <p className="travel-loading">Please Wait Few seconds</p></p>
         ) : (
           <>
             <div
