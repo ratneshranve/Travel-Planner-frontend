@@ -48,24 +48,20 @@ function TravelPlan() {
 const prompt = `
 You are a professional travel planner.
 
-Create a clear and concise ${data.days}-day itinerary for a ${data.tripType} trip to ${data.destination}, starting ${data.startDate}, for ${data.people} people, with a ₹${data.budget} budget.
+Generate a ${data.days}-day itinerary for a ${data.tripType} trip from ${data.from} to ${data.to}, starting on ${data.startDate}, for ${data.people} people, with a ₹${data.budget} total budget.
 
-Interests: ${data.interests.join(", ")}
+Include:
+1. **Trip Summary**: Dates, group type, total budget.
+2. **Travel Options**: Recommend best mode (flight/train/bus) with real provider names, departure/arrival times, and cost.
+3. **Hotel Suggestion**: Hotel/guesthouse name, location, nightly cost.
+4. **Daily Plan**: 
+   - Food: Places for breakfast, lunch, dinner
+   - Activities (3–5 per day with times)
+   - One local tip per day ⚡
+5. **Budget Breakdown**: Total cost per category (travel, stay, food, activities)
+6. 💡 One budget-saving tip
 
-Structure:
-1. **Trip Title** — fun & descriptive
-2. **Trip Info**: Dates, group size, type, budget
-3. **Stay Suggestion**: Area + approx. cost
-4. **Daily Itinerary**:
-   - 3–5 key activities per day (timeline style)
-   - 1 local tip per day (⚡short)
-5. **Budget Summary**: Daily & total estimates, 1 savings tip 💡
-
-Keep it:
-- Easy to scan (bold headers, bullet points)
-- Matched to group & interests
-- Budget-conscious
-- Avoid generic filler
+Only use real places, restaurants, and transport providers. Be concise, practical, and budget-conscious.
 `;
 
 

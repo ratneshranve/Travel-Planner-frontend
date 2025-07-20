@@ -3,7 +3,9 @@ import { useNavigate } from "react-router-dom";
 import "./Itinerary.css";
 
 function Itinerary() {
-  const [destination, setDestination] = useState("");
+  const [fromDestination, setFromDestination] = useState("");
+const [toDestination, setToDestination] = useState("");
+
   const [date, setDate] = useState("");
   const [days, setDays] = useState("");
   const [budget, setBudget] = useState("");
@@ -32,7 +34,9 @@ function Itinerary() {
       .map(([key]) => key);
 
     const itineraryData = {
-      destination,
+  from: fromDestination,
+  to: toDestination,
+
       startDate: date,
       days: parseInt(days),
       budget: Math.round(Number(budget)),
@@ -49,10 +53,27 @@ function Itinerary() {
       <div className="itinerary-box">
         <h2>Create Your Travel Itinerary</h2>
         <form onSubmit={handleSubmit}>
+  <div className="inline-group">
   <div className="itinerary-group">
-    <label>Destination:</label>
-    <input type="text" value={destination} onChange={(e) => setDestination(e.target.value)} required />
+    <label>From:</label>
+    <input
+      type="text"
+      value={fromDestination}
+      onChange={(e) => setFromDestination(e.target.value)}
+      required
+    />
   </div>
+  <div className="itinerary-group">
+    <label>To:</label>
+    <input
+      type="text"
+      value={toDestination}
+      onChange={(e) => setToDestination(e.target.value)}
+      required
+    />
+  </div>
+</div>
+
 
   <div className="itinerary-group">
     <label>Start Date:</label>
@@ -80,10 +101,12 @@ function Itinerary() {
     <div className="itinerary-group">
       <label>Trip Type:</label>
       <select value={tripType} onChange={(e) => setTripType(e.target.value)}>
-        <option value="friends">Friends</option>
-        <option value="couple">Couple</option>
-        <option value="family">Family</option>
-      </select>
+  <option value="solo">Solo</option>
+  <option value="friends">Friends</option>
+  <option value="couple">Couple</option>
+  <option value="family">Family</option>
+</select>
+
     </div>
   </div>
 

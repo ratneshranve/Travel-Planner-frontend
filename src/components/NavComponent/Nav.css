@@ -42,12 +42,20 @@
 
 .nav-btn {
   padding: 5px 10px;
-  background-color: #00bcd4;
-  border: none;
-  color: black;
+  background-color: #ffffff;       /* White background */
+  border: 2px solid #00bcd4;       /* Border same as original background color */
+  color: #00bcd4;                  /* Text color matching border */
   border-radius: 4px;
   cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
 }
+
+.nav-btn:hover {
+  background-color: #828282;
+  color: rgb(255, 255, 255);
+}
+
 
 .hamburger {
   display: none;
