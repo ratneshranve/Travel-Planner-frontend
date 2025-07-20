@@ -150,3 +150,60 @@
     background: none;
   }
 }
+.travel-container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.travel-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
+  width: 100%;
+  max-width: 800px;
+}
+
+.travel-title {
+  text-align: center;
+  color: #00bcd4;
+  margin-bottom: 20px;
+}
+
+.travel-loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}
+
+.travel-plan-text {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.travel-plan-text h2,
+.travel-plan-text h3 {
+  color: #00bcd4;
+}
+
+.travel-plan-text strong {
+  color: #007e8a;
+}
+
+.download-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #0097a7;
+}
