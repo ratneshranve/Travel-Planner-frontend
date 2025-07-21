@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Nav.css';
-
+import Auth from '../AuthComponent/Auth';
 function Nav() {
   const navigate = useNavigate();
   const token = localStorage.getItem('token');
@@ -12,6 +12,8 @@ function Nav() {
   
 
   return (
+    <>
+    <Auth/>
     <nav className="navbar">
       <div className="nav-logo">
   <Link to="/">
@@ -59,6 +61,7 @@ function Nav() {
         )}
       </ul>
     </nav>
+    </>
   );
 }
 
