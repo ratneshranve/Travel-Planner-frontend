@@ -14,8 +14,16 @@ function Nav() {
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <Link to="/"> Travel Planner</Link>
-      </div>
+  <Link to="/">
+    <img
+      src="/assets/images/logo.png"
+      alt="Travel Planner Logo"
+      style={{ height: "60px" }}
+    />
+  </Link>
+</div>
+
+
 
       <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
         ☰

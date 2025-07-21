@@ -68,7 +68,7 @@ Only use real places, restaurants, and transport providers. Be concise, practica
 
     const options = {
       margin: 0.5,
-      filename: `Itinerary-${data.destination}-${data.startDate}.pdf`,
+      filename: `Itinerary.pdf`,
       image: { type: "jpeg", quality: 0.98 },
       html2canvas: {
         scale: 2,
