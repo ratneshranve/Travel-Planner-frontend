@@ -12,7 +12,7 @@ function Footer() {
       
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Travel-Planner. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} GhumoPhiro. All rights reserved.</p>
       </div>
     </footer>
                 </>
@@ -24,7 +24,7 @@ function Footer() {
       
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Travel-Planner. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} GhumoPhiro. All rights reserved.</p>
       </div>
     </footer>
                 </>
@@ -36,7 +36,7 @@ function Footer() {
       <div className="footer-container">
 
         <div className="footer-about">
-          <h3>Travel-Planner</h3>
+          <h3>GhumoPhiro</h3>
           <p>Making your journeys smarter and smoother using AI-powered travel recommendations.</p>
         </div>
 
@@ -45,21 +45,21 @@ function Footer() {
           <ul>
             <li><Link to="/">Home</Link></li>
             <li><Link to="/register">Register</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
+           
             <li><Link to="/login">Login</Link></li>
           </ul>
         </div>
 
         <div className="footer-contact">
           <h4>Contact Us</h4>
-          <p>Email: support@travelplanner.ai</p>
-          <p>Phone: +91 98765 43210</p>
+          <p>Email: support@ghumophiro.ai</p>
+          <p>Phone: +91 9770133148</p>
         </div>
 
       </div>
 
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} Travel-Planner. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} GhumoPhiro. All rights reserved.</p>
       </div>
     </footer>
                 
