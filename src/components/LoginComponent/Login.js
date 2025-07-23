@@ -9,8 +9,11 @@ function Login() {
   const [output, setOutput] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); // <-- Loading state added
 
   const handleSubmit = () => {
+    setLoading(true); // Start loading
+
     const userDetail = { email, password };
 
     axios
@@ -25,13 +28,16 @@ function Login() {
         localStorage.setItem('role', userDetail.role);
         localStorage.setItem('status', userDetail.status);
         localStorage.setItem('info', userDetail.info);
-        
+
         userDetail.role === 'user' ? navigate('/user') : navigate('/admin');
       })
       .catch(() => {
         setOutput('Login unsuccessful');
         setEmail('');
         setPassword('');
+      })
+      .finally(() => {
+        setLoading(false); // Stop loading
       });
   };
 
@@ -49,6 +55,7 @@ function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
+              disabled={loading}
             />
           </div>
 
@@ -60,12 +67,24 @@ function Login() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
+              disabled={loading}
             />
           </div>
 
           <div className="login-button-group">
-            <button type="button" className="login-button" onClick={handleSubmit}>
-              Login
+            <button
+              type="button"
+              className="login-button"
+              onClick={handleSubmit}
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="spinner" /> Please wait...
+                </>
+              ) : (
+                'Login'
+              )}
             </button>
           </div>
 
@@ -73,8 +92,8 @@ function Login() {
             <p>
               Not registered?{' '}
               <span className="link-button" onClick={() => navigate('/register')}>
-  Register Here
-</span>
+                Register Here
+              </span>
             </p>
           </div>
         </form>
