@@ -2,8 +2,6 @@ import './Register.css';
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { userApi } from '../../apiurl'; // Adjust path as needed
-
 
 function Register() {
   const navigate = useNavigate();
@@ -11,36 +9,28 @@ function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [loading, setLoading] = useState(false); // <-- Added
 
-   // Ensure this is set correctly
+  const handleSubmit = () => {
+    setLoading(true); // Show loader
 
-const handleSubmit = () => {
-  if (password.length < 5 || password.length > 10) {
-    setOutput('Password must be between 5 and 10 characters');
-    return;
-  }
+    const userData = { name, email, password };
 
-  const userData = { name, email, password };
-
-  axios
-    .post(userApi + 'save', userData, {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .then(() => {
-      navigate('/login');
-    })
-    .catch((error) => {
-      console.error('Registration Error:', error);
-      setOutput('Registration failed');
-      setName('');
-      setEmail('');
-      setPassword('');
-    });
-};
-
-
+    axios
+      .post('http://localhost:3001/user/save', userData)
+      .then(() => {
+        navigate('/login');
+      })
+      .catch(() => {
+        setOutput('Registration failed');
+        setName('');
+        setEmail('');
+        setPassword('');
+      })
+      .finally(() => {
+        setLoading(false); // Hide loader
+      });
+  };
 
   return (
     <div className="register-page">
@@ -56,6 +46,7 @@ const handleSubmit = () => {
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="Enter your name"
+              disabled={loading}
             />
           </div>
 
@@ -67,6 +58,7 @@ const handleSubmit = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email"
+              disabled={loading}
             />
           </div>
 
@@ -78,12 +70,24 @@ const handleSubmit = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter your password"
+              disabled={loading}
             />
           </div>
 
           <div className="d-grid mb-3">
-            <button type="button" className="btn btn-primary" onClick={handleSubmit}>
-              Register
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={handleSubmit}
+              disabled={loading}
+            >
+              {loading ? (
+                <>
+                  <span className="spinner" /> Please wait...
+                </>
+              ) : (
+                'Register'
+              )}
             </button>
           </div>
 
@@ -91,9 +95,8 @@ const handleSubmit = () => {
             <p>
               Already registered?{' '}
               <span className="link-button" onClick={() => navigate('/login')}>
-  Login Here
-</span>
-
+                Login Here
+              </span>
             </p>
           </div>
         </form>
